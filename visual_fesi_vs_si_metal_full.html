@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html><head>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:transparent;color:#1a1a1a;padding:6px 2px;font-size:12px}
+h2{font-size:13px;font-weight:600;margin-bottom:2px}
+.sub{font-size:10px;color:#666;margin-bottom:12px}
+.krow{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:12px}
+.kc{background:#f5f4f0;border-radius:8px;padding:9px 11px;border-top:3px solid transparent}
+.kl{font-size:9px;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.kv{font-size:17px;font-weight:600}
+.ks{font-size:9px;color:#888;margin-top:1px}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.ch{position:relative;height:240px}
+.ch2{position:relative;height:200px}
+.sec{font-size:9.5px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;margin:10px 0 6px}
+.box{background:#f5f4f0;border-radius:8px;padding:10px 12px;border-left:3px solid transparent;font-size:10px}
+.bh{font-weight:600;font-size:10.5px;margin-bottom:3px}
+.bt{color:#555;line-height:1.5}
+.stg-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px}
+.stg{border-radius:8px;padding:9px 8px;text-align:center;font-size:10px}
+.stg-name{font-weight:700;font-size:11px;margin-bottom:3px}
+.stg-suit{font-size:9px;font-weight:600;margin-bottom:2px}
+.stg-why{font-size:8.5px;color:#666;line-height:1.35}
+@media(prefers-color-scheme:dark){
+  body,h2{color:#d4d2c8}.sub,.sec,.bt,.stg-why,.ks{color:#888}
+  .kc,.box{background:#252420}.kl{color:#888}.kv{color:#d4d2c8}.bh{color:#d4d2c8}
+}
+</style>
+</head><body>
+<h2>FeSi vs Si Metal — Full VIU Decomposition</h2>
+<div class="sub">Silicon procurement · Price alone misleads by ₹13,368/MT · Process economics reverse the decision</div>
+
+<div class="krow">
+  <div class="kc" style="border-top-color:#185FA5">
+    <div class="kl">FeSi market price</div><div class="kv">₹1,11,500</div><div class="ks">70% Si · 25% Fe</div>
+  </div>
+  <div class="kc" style="border-top-color:#854F0B">
+    <div class="kl">Si Metal market price</div><div class="kv">₹1,43,000</div><div class="ks">98% Si · premium alloy</div>
+  </div>
+  <div class="kc" style="border-top-color:#A32D2D">
+    <div class="kl">FeSi net cost/MT Si</div><div class="kv" style="color:#A32D2D">₹1,49,643</div><div class="ks">After Fe credit deducted</div>
+  </div>
+  <div class="kc" style="border-top-color:#0f6e56">
+    <div class="kl">Si Metal final VIU cost</div><div class="kv" style="color:#0f6e56">₹1,39,795</div><div class="ks">After all process benefits</div>
+  </div>
+</div>
+
+<div class="twocol">
+  <div>
+    <div class="sec">Benefit decomposition — Si Metal vs FeSi (₹/MT effective Si)</div>
+    <div class="ch"><canvas id="cBen" aria-label="Horizontal bar chart showing each VIU benefit component for Si Metal versus FeSi including recovery improvement 1670, throughput gain 1321, yield improvement 1200, power saving 520, inclusion cleanliness 720, slag reduction 480 and reblow reduction 158"></canvas></div>
+  </div>
+  <div>
+    <div class="sec">Cost journey: FeSi market price → Si Metal final VIU (₹/MT Si)</div>
+    <div class="ch"><canvas id="cWF" aria-label="Waterfall chart showing transformation from FeSi raw cost 111500 through adjustment to 149643, then Si Metal raw at 145918 reducing through operational benefits to final 139795"></canvas></div>
+  </div>
+</div>
+
+<div class="sec">Thermal physics: why Si Metal creates less process burden</div>
+<div class="twocol">
+  <div class="ch2"><canvas id="cTherm" aria-label="Grouped bar chart comparing chill factor, temperature pickup and net thermal effect for Si Metal and FeSi showing Si Metal has plus 1 degree net versus FeSi minus 1 degree net thermal contribution"></canvas></div>
+  <div>
+    <div class="box" style="border-left-color:#185FA5;margin-bottom:8px">
+      <div class="bh" style="color:#185FA5">Power saving: 80 kVAh/MT Si = ₹520/MT</div>
+      <div class="bt">Si Metal dissolves at RH with net +1°C thermal pickup vs FeSi's −1°C burden. Difference = 2°C per addition × 190T heat × 0.75 MJ/T°C → 80 kVAh saved × ₹6.5/kVAh. At 11,800 MT FeSi p.a., 60% substitution = <strong style="color:#0f6e56">₹3.7 Cr electricity saving alone.</strong></div>
+    </div>
+    <div class="box" style="border-left-color:#0f6e56">
+      <div class="bh" style="color:#0f6e56">Net saving: ₹9,848/MT Si · ₹6.97 Cr at 60% sub</div>
+      <div class="bt">L1 sees: FeSi ₹31,500/MT cheaper. VIU sees: Si Metal ₹9,848/MT cheaper per unit of Si delivered. The ₹41,348/MT perception gap is entirely created by recovery, Fe credit assumptions, and hidden process costs the alloy price tag never shows.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">Process stage suitability — where Si Metal works and where it doesn't</div>
+<div class="stg-grid">
+  <div class="stg" style="background:#fcebeb">
+    <div class="stg-name">HMDS</div>
+    <div class="stg-suit" style="color:#a32d2d">❌ Poor</div>
+    <div class="stg-why">Extreme oxidation environment; Si losses >40%. FeSi only.</div>
+  </div>
+  <div class="stg" style="background:#faeeda">
+    <div class="stg-name">BOF</div>
+    <div class="stg-suit" style="color:#854f0b">⚠ Limited</div>
+    <div class="stg-why">High oxidation zone. Si Metal viable only for late-tap additions.</div>
+  </div>
+  <div class="stg" style="background:#eaf3de">
+    <div class="stg-name">LF</div>
+    <div class="stg-suit" style="color:#27500a">✓ Good</div>
+    <div class="stg-why">Controlled alloying. Si Metal preferred for inclusion quality.</div>
+  </div>
+  <div class="stg" style="background:#0f6e56;color:#fff">
+    <div class="stg-name" style="color:#fff">RH</div>
+    <div class="stg-suit" style="color:#a8e6cf">★ BEST</div>
+    <div class="stg-why" style="color:#c8f5e0">Precision chemistry. Full power saving realized. Si Metal optimal.</div>
+  </div>
+  <div class="stg" style="background:#f5f4f0">
+    <div class="stg-name">Tundish</div>
+    <div class="stg-suit" style="color:#666">↓ Minor</div>
+    <div class="stg-why">Late-stage trim only. Very small volumes. Either alloy acceptable.</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const dk=matchMedia('(prefers-color-scheme:dark)').matches;
+const tc=dk?'#c2c0b6':'#444', gc=dk?'rgba(255,255,255,0.06)':'rgba(0,0,0,0.05)';
+
+// Benefit bar chart (horizontal)
+new Chart(document.getElementById('cBen'),{type:'bar',
+  data:{
+    labels:['Recovery\nimprovement','Throughput\ngain','Yield\nimprovement','Inclusion\ncleanliness','Power\nsaving','Slag\nreduction','Reblow\nreduction','Electrode\nsaving'],
+    datasets:[{label:'₹/MT Si benefit',
+      data:[1670,1321,1200,720,520,480,158,66],
+      backgroundColor:['#0f6e56','#185FA5','#1D9E75','#378ADD','#854F0B','#1D9E75','#185FA5','#378ADD'],
+      borderRadius:3,borderWidth:0}]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,indexAxis:'y',
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`₹${c.raw.toLocaleString('en-IN')}/MT Si`}}},
+    scales:{
+      x:{ticks:{color:tc,font:{size:9},callback:v=>'₹'+v},grid:{color:gc}},
+      y:{ticks:{color:tc,font:{size:9},maxRotation:0},grid:{display:false}}
+    }
+  }
+});
+
+// Waterfall
+const wfL=['FeSi\nmarket','FeSi\n₹/MT Si\n(raw)','Fe credit\n(deducted)','FeSi\neff. cost/MT Si','','Si Metal\nmarket','Si Metal\n₹/MT Si','All process\nbenefits','Si Metal\nfinal VIU'];
+const wfBase=[0,111500,145918,0,0,0,143000,145918,0];
+const wfVal=[111500,34143,-9642,149643,0,143000,2918,-9848,139795];
+const wfCol=['#185FA5','#A32D2D','#1D9E75','#8B1A1A','transparent','#378ADD','#A32D2D','#1D9E75','#0f6e56'];
+
+new Chart(document.getElementById('cWF'),{type:'bar',
+  data:{labels:wfL,datasets:[
+    {data:wfBase,backgroundColor:'transparent',borderWidth:0},
+    {data:wfVal.map(v=>Math.abs(v)),backgroundColor:wfCol,borderRadius:3,borderWidth:0}
+  ]},
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:(c)=>{if(c.datasetIndex===0)return null;const v=wfVal[c.dataIndex];return v===0?null:'₹'+v.toLocaleString('en-IN')+'/MT Si';}}}},
+    scales:{
+      x:{stacked:true,ticks:{color:tc,font:{size:8},maxRotation:0},grid:{display:false}},
+      y:{stacked:true,min:0,max:175000,ticks:{color:tc,font:{size:8.5},callback:v=>'₹'+(v/1000).toFixed(0)+'K'},grid:{color:gc}}
+    }
+  }
+});
+
+// Thermal chart
+new Chart(document.getElementById('cTherm'),{type:'bar',
+  data:{
+    labels:['Chill factor\n(°C/MT)','Temp pickup\n(°C/MT)','Net thermal\neffect (°C/MT)'],
+    datasets:[
+      {label:'FeSi',data:[-7,6,-1],backgroundColor:'#A32D2D',borderRadius:3,borderWidth:0},
+      {label:'Si Metal',data:[-9,10,1],backgroundColor:'#1D9E75',borderRadius:3,borderWidth:0}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:true,position:'bottom',labels:{color:tc,font:{size:9.5},boxWidth:9,padding:8}}},
+    scales:{
+      x:{ticks:{color:tc,font:{size:9}},grid:{display:false}},
+      y:{ticks:{color:tc,font:{size:9},callback:v=>(v>=0?'+':'')+v+'°C'},grid:{color:gc},
+        title:{display:true,text:'Temperature contribution (°C)',color:tc,font:{size:8.5}}}
+    }
+  }
+});
+</script>
+</body></html>
